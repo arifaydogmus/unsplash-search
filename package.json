@@ -22,7 +22,6 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "preversion": "npm test",
-    "prepare": "npm run build",
     "build": "tsc && tsc -m es6 --outDir lib-esm",
     "test": "jest --no-cache",
     "test:coverage": "jest --no-cache --coverage",
