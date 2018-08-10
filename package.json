@@ -22,10 +22,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "preversion": "npm test",
-    "precommit": "npm run lint",
-    "pretest": "npm run lint",
     "prepare": "npm run build",
-    "build": "npm run lint && npm run clean &&  tsc && tsc -m es6 --outDir lib-esm",
+    "build": "tsc && tsc -m es6 --outDir lib-esm",
     "test": "jest --no-cache",
     "test:coverage": "jest --no-cache --coverage",
     "test:coverall": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
