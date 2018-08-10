@@ -38,7 +38,7 @@ npm install unsplash-search
 ## Basic Usage
 
 Create an instance with a valid API access key (see [Requirements](#requirements))
-A working demo on [mnfy.me/unsplash-search](http://mnfy.me/unsplash-search-demo) (Made with React)
+A working demo on [mnfy.me/unsplash-search-demo](http://mnfy.me/unsplash-search-demo) (Made with React)
 Demo source code also avialable on https://github.com/arifaydogmus/unsplash-search-demo
 
 ```js
@@ -63,7 +63,7 @@ provider
   .catch(error => error);
 ```
 
-![alt text](/media/demo-screenshot.jpg)
+![Demo screen shot](/media/demo-screenshot.jpg)
 
 ---
 
