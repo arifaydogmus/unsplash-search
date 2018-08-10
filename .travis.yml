@@ -1,13 +1,10 @@
 language: node_js
 node_js:
-  - node
   - 11
-  - 8
 branches:
   only:
     - master
 before_script:
-  - make build-node
   - node --version
   - rm -rf ./node_modules package-lock.json
   - npm install --no-optional
