@@ -1,0 +1,55 @@
+{
+  "name": "unsplash-search",
+  "version": "1.0.2",
+  "description": "Unsplash search wrapper. (Typescript)",
+  "author": "Arif Aydogmus",
+  "license": "ISC",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:arifaydogmus/unsplash-search.git"
+  },
+  "keywords": [
+    "unsplash",
+    "photography",
+    "free image",
+    "free photo",
+    "search photo",
+    "find photo",
+    "image search"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "preversion": "npm test",
+    "precommit": "npm run lint",
+    "pretest": "npm run lint",
+    "prepare": "npm run build",
+    "build": "npm run lint && npm run clean &&  tsc && tsc -m es6 --outDir lib-esm",
+    "test": "jest --no-cache",
+    "test:coverage": "jest --no-cache --coverage",
+    "test:coverall": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "clean": "shx rm -rf lib lib-esm lib-umd",
+    "lint": "tslint --project tsconfig.json  'src/**/*.ts' 'test/**/*.ts'"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "awesome-typescript-loader": "^5.2.1",
+    "coveralls": "^3.0.2",
+    "jest": "^23.6.0",
+    "shx": "^0.3.2",
+    "source-map-loader": "^0.2.4",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.2.2",
+    "typescript-tslint-plugin": "^0.1.2",
+    "unsplash-search": "./"
+  },
+  "dependencies": {
+    "@types/query-string": "^6.1.1",
+    "cross-fetch": "^2.2.3",
+    "query-string": "^6.2.0"
+  }
+}

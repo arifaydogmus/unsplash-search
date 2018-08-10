@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "outDir": "./lib/",
+    "removeComments": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "preserveConstEnums": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "declaration": true,
+    "module": "commonjs",
+    "types": ["query-string", "cross-fetch", "jest"],
+    "lib": ["es2015", "dom"],
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "alwaysShowRuleFailuresAsWarnings": false,
+        "ignoreDefinitionFiles": true,
+        "configFile": "./tslint.json",
+        "suppressWhileTypeErrorsPresent": false,
+        "mockTypeScriptVersion": false
+      }
+    ]
+  },
+  "include": ["./src/**/*"]
+}

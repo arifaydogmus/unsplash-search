@@ -1,0 +1,11 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "quotemark": [true, "single"],
+    "no-implicit-dependencies": [true, "dev"]
+  },
+  "linterOptions": {
+    "exclude": ["dist", "demo", "node_modules", "*.d.ts"]
+  }
+}
