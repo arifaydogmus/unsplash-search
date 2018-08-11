@@ -2,6 +2,12 @@ import { E_INVALID_SEARCH_TERM, E_OAUTH_ERROR } from '../src/constants/errors';
 import UnsplashSearch from '../src/index';
 import { IResult } from '../src/typings/interface';
 
+/**
+ * Following access key belongs to my (Arif) Unsplash account and only for test purposes.
+ * Consider get one of from Unsplash. (https://unsplash.com/developers)
+ *
+ * Or create your API mocker.
+ */
 const accessKey =
   'a9b36d0ca18fc34ccf448bbb7ff86e580adb6ed0778b26a211dfc3c0d2fa3a90';
 
