@@ -3,6 +3,7 @@ import UnsplashSearch from '../src/index';
 import { IResult } from '../src/typings/interface';
 
 /**
+<<<<<<< HEAD
  * Following access key belongs to my (Arif) Unsplash account and only for test purposes.
  * Consider get one of from Unsplash. (https://unsplash.com/developers)
  *
@@ -10,6 +11,15 @@ import { IResult } from '../src/typings/interface';
  */
 const accessKey =
   'a9b36d0ca18fc34ccf448bbb7ff86e580adb6ed0778b26a211dfc3c0d2fa3a90';
+=======
+ * Following access key should be valid Unsplash API access key.
+ * Consider get one of from Unsplash. (https://unsplash.com/developers)
+ *
+ * Or create your  API mocker.
+ */
+
+const accessKey = '<unsplash api access key>';
+>>>>>>> 89b9316ffbe5e800e5b9b6add3268642be01ae0c
 
 let result: Promise<IResult>;
 const expectedResult = {
@@ -24,7 +34,7 @@ describe('Unsplash Search Tests', () => {
 
   beforeEach(() => {
     validInstance = new UnsplashSearch(accessKey);
-    invalidInstance = new UnsplashSearch('mock-key');
+    invalidInstance = new UnsplashSearch('invalid-key');
   });
 
   it('Instance creation empty access key should throw an error', async () => {
