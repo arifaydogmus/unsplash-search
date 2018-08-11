@@ -47,11 +47,11 @@ export interface ITag {
 export type Filter = (imgArray: object[]) => IResultImage[] | Error;
 
 export type SearchBase = (
-  query: string,
+  keyword: string,
   page: number,
   orientation?: Orientation
 ) => Promise<IResult>;
 
-export type Search = (query: string, page?) => Promise<IResult>;
+export type Search = (keyword: string, page?) => Promise<IResult>;
 
 export type Fetcher = (params: ISearchParams) => Promise<string>;

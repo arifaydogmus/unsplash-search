@@ -2,8 +2,14 @@ import { E_INVALID_SEARCH_TERM, E_OAUTH_ERROR } from '../src/constants/errors';
 import UnsplashSearch from '../src/index';
 import { IResult } from '../src/typings/interface';
 
-const accessKey =
-  'a9b36d0ca18fc34ccf448bbb7ff86e580adb6ed0778b26a211dfc3c0d2fa3a90';
+/**
+ * Following access key should be valid Unsplash API access key.
+ * Consider get one of from Unsplash. (https://unsplash.com/developers)
+ *
+ * Or create your  API mocker.
+ */
+
+const accessKey = '<unsplash api access key>';
 
 let result: Promise<IResult>;
 const expectedResult = {
@@ -18,7 +24,7 @@ describe('Unsplash Search Tests', () => {
 
   beforeEach(() => {
     validInstance = new UnsplashSearch(accessKey);
-    invalidInstance = new UnsplashSearch('mock-key');
+    invalidInstance = new UnsplashSearch('invalid-key');
   });
 
   it('Instance creation empty access key should throw an error', async () => {

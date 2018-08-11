@@ -71,19 +71,19 @@ provider
 
 Following methods available names and paramters (if available) describe it self.
 
-#### searchAll(query, page)
+#### searchAll(keyword, page)
 
 Searches in all available photos
 
-#### searchLandscapes(query, page)
+#### searchLandscapes(keyword, page)
 
 Searches only landscape oriented photos
 
-#### searchPortraits(query, page)
+#### searchPortraits(keyword, page)
 
 Searches only portrait oriented photos
 
-#### searchSquares(query, page)
+#### searchSquares(keyword, page)
 
 Searches only square size photos
 

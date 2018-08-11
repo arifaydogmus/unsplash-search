@@ -24,8 +24,8 @@ import {
   API_PAGE_MAX_ITEM,
   API_SEARCH_URL,
   API_VERSION,
-  X_LIMIT,
-  X_REMAIN,
+  QUERY_LIMIT,
+  QUERY_REMAIN,
 } from './constants/index';
 
 export default class UnsplashSearch extends IUnsplashSearch {
@@ -36,17 +36,17 @@ export default class UnsplashSearch extends IUnsplashSearch {
     super(accessKey, Math.min(perPage, API_PAGE_MAX_ITEM));
   }
 
-  public searchAll: Search = (query, page) =>
-    this.search(query, page, Orientation.ALL);
+  public searchAll: Search = (keyword, page) =>
+    this.search(keyword, page, Orientation.ALL);
 
-  public searchLandscapes: Search = (query, page) =>
-    this.search(query, page, Orientation.LANDSCAPE);
+  public searchLandscapes: Search = (keyword, page) =>
+    this.search(keyword, page, Orientation.LANDSCAPE);
 
-  public searchPortraits: Search = (query, page) =>
-    this.search(query, page, Orientation.PORTRAIT);
+  public searchPortraits: Search = (keyword, page) =>
+    this.search(keyword, page, Orientation.PORTRAIT);
 
-  public searchSquares: Search = (query, page) =>
-    this.search(query, page, Orientation.SQUARISH);
+  public searchSquares: Search = (keyword, page) =>
+    this.search(keyword, page, Orientation.SQUARISH);
 
   public getQueryLimit = (): number => this.queryLimit;
 
@@ -69,9 +69,9 @@ export default class UnsplashSearch extends IUnsplashSearch {
     const result: Promise<any> = await fetch(url, fetchParams)
       .then(response => {
         const { headers } = response;
-        if (headers.has(X_LIMIT) && headers.has(X_REMAIN)) {
-          this.queryLimit = parseInt(headers.get(X_LIMIT) || '0', 10);
-          this.queryRemains = parseInt(headers.get(X_REMAIN) || '0', 10);
+        if (headers.has(QUERY_LIMIT) && headers.has(QUERY_REMAIN)) {
+          this.queryLimit = parseInt(headers.get(QUERY_LIMIT) || '0', 10);
+          this.queryRemains = parseInt(headers.get(QUERY_REMAIN) || '0', 10);
         }
         return response.json();
       })
@@ -110,15 +110,16 @@ export default class UnsplashSearch extends IUnsplashSearch {
   };
 
   protected search: SearchBase = (
-    query,
+    keyword,
     page = 1,
     orientation = Orientation.ALL
   ) => {
+    // per_page & query naming belongs to Unsplash API
     const params: ISearchParams = {
       orientation,
       page,
       per_page: this.perPage,
-      query,
+      query: keyword,
     };
 
     if (!params.query || params.query.length < 3) {
